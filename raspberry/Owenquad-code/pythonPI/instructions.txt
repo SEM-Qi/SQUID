@@ -1,0 +1,12 @@
+Installation instructions for the GPS Poller for Raspberry Pi.
+
+1. Copy the file pyserver to /etc/init.d/ with command: sudo cp ./pyserver /etc/init.d/
+2. Make the file pyserver executable with command: sudo chmod +x /etc/init.d/pyserver
+3. To make the script run at startu use the following command: sudo update-rc.d /etc/init.d/pyserver defaults
+3. Create the folder /usr/local/bin/pyserver/ with command: sudo mkdir /usr/local/bin/pyserver/
+4. Copy the file pyserver.py to /usr/local/bin/pyserver/ with command: sudo cp ./pyserver.py /usr/local/bin/pyserver/
+6. Restart the Raspberry Pi
+
+
+2014-05-01
+Jani Pasanen

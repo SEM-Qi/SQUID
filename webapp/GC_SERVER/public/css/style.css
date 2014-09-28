@@ -1,0 +1,22 @@
+.navbar-header {
+    background: #080808;
+    color: #fff;
+}
+
+.m-top {
+    margin-top:80px;
+}
+
+#logo {
+    color: #fff;
+}
+
+#exit {
+    background: #ac2925;
+    cursor: pointer;
+    color: #fff;
+}
+
+#exit:hover {
+    background: #d2322d;
+}

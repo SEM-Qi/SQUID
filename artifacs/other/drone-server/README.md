@@ -1,0 +1,14 @@
+## What is this?
+
+## Instructions
+
+To set up the server (on qi.homeip.net) with authentification security 
+and the drone management tools please follow these steps:
+
+1. install node and mongodb
+2. type mongod --dbpath "../path/to/folder/data/db" to create the database
+3. run the server from the folder by typing node server.js (or nodejs server.js)
+
+
+## File structure
+

@@ -1,0 +1,358 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 16, 2014, 5:58:03 PM
+    Author     : aure
+*/
+
+/*-----------------------------------------------------------------RESET STYLE*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a:focus {
+    outline-color: #f47421;
+    outline-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*--------------------------------------------------------------GENERAL STYLES*/
+
+body {
+    min-width: 1000px;
+    color: #ddd;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.invisible {
+    display: none;
+}
+
+/*-------------------------------------------------------------------ON RESIZE*/
+
+@media all and (max-width: 900px) {
+    .resize-font {
+        font-size: 0.8em; 
+    }
+}
+
+/*---------------------------------------------------------------------MENUBAR*/
+
+.menubar {
+    background: black;
+    height: 40px;
+    overflow:hidden;
+}
+
+.menubar img {
+    height: 40px;
+}
+
+.menubar p {
+    padding-top: 12px;
+}
+
+.logo {
+    height: 40px;
+    width: 5%;
+    float: left;
+}
+
+/*-----------------------------------------------------------INFOPANEL--------*/
+
+.info-panel {
+    height: 100%;
+    width: 26%;
+    float: left;
+}
+
+.info-element {
+    margin-right: 10px;
+}
+
+.info-element img {
+    float: left;
+}
+
+.info-element p {
+    float: left;
+}
+
+/*---------------------------------------------------NOTIFICATIONPANEL--------*/
+
+.notification-panel {
+    height: 100%;
+    min-width: 35%;
+    float: left;
+}
+
+.notification-element {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.notification-panel img {
+    float: left;
+}
+
+.notification-panel p {
+    font-size: 1.1em;
+    float: left;
+    text-align: center;
+}
+
+/*-----------------------------------------------------------MENUPANEL--------*/
+
+.menu-panel {
+    height: 100%;
+    min-width: 34%;
+    float: right;
+}
+
+.menu-panel img {
+    float: right; 
+}
+
+.menu-panel a {
+    float: right;
+    height: 40px;
+}
+
+.icon:hover {
+    background: #333;
+    cursor: pointer;
+}
+
+.selected {
+    background: #555;
+}
+
+.selected:hover {
+    background: #555;
+}
+
+/*--------------------------------------------------------DROPDOWNMENU--------*/
+
+.dropdown-menu {
+    background: #f47421;
+    width: 280px;
+    margin-top: 40px;
+    position: absolute;
+    padding-top: 1px;
+    right: 0;
+    z-index: 0;
+}
+.dropdown-element {
+    height: 40px;
+    background: #555;
+    cursor: pointer;
+}
+
+.dropdown-element:hover {
+    height: 40px;
+    background: #f47421;
+    color: white;
+}
+
+.dropdown-element img {
+    float: left;
+    margin-right: 5px;
+}
+
+/*---------------------------------------------------------------------CONTENT*/
+
+.content {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    min-width: 1000px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-stream {
+    width:100%; 
+    height:100%;
+}
+
+.map-panel {
+    background: black;
+    height: 310px; width: 250px;
+    margin: 20px;
+}
+
+.map-icon {
+    width: 60px;
+}
+
+.map-icon-panel {
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map {
+    height: 250px; width: 250px;
+}
+
+.copyright-info {
+    bottom: 0;
+    margin-bottom: 5px;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+}
+
+.copyright-text {
+    text-align: center;
+}
+
+/*-------------------------------------------------------------GAMEPAD--------*/
+
+.gamepad-container {
+    height: 200px; width: 200px; 
+    border: 4px dashed #aaa;
+    margin: 20px;
+    float:left;
+}
+
+.button {
+    border-radius: 50%;
+    width: 50px; height: 50px;
+    text-align: center;
+    font-size: 2.4em;
+}
+
+.button p {
+    padding-top: 8px;
+}
+
+.Y {
+    margin-top: 19px;
+    margin-left: 73px;
+    border: 2px solid #c8960f;
+    color: #c8960f;
+}
+
+.B {
+    margin-left: 127px;
+    border: 2px solid #782814;
+    color: #782814;
+}
+
+.X {
+    margin-top: -54px;
+    margin-left: 19px;
+    border: 2px solid #283c64;
+    color: #283c64;
+}
+
+.A {
+    margin-left: 73px;
+    border: 2px solid #646428;
+    color: #646428;
+}
+
+.pressedA {
+    color: #c0c08a;
+    background: #96963c;
+}
+
+.pressedX {
+    color: #96aed8;
+    background: #5078be;
+}
+
+.pressedB {
+    color: #d28d78;
+    background: #b4411e;
+}
+
+.pressedY {
+    color: #f6d875;
+    background: #f0be19;
+}
+
+.axis-top {
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    text-align: center;
+    font-size: 2.1em;
+    background: #646464;
+    margin-top: 52px;
+    margin-left: 52px;
+    border: 8px solid #4d4d4d;
+    position: absolute;
+    z-index: 2;
+}
+
+.basis {
+    border-radius: 50%;
+    width: 120px; height: 120px;
+    text-align: center;
+    font-size: 2.1em;
+    background: #ccc;
+    margin-top: 36px;
+    margin-left: 36px;
+    border: 4px solid #fff;
+    position: absolute;
+}

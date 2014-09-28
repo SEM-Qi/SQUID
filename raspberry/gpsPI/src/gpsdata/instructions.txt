@@ -1,0 +1,13 @@
+Installation instructions for the GPS Poller for Raspberry Pi.
+
+1. Copy the file gpspoller to /etc/init.d/ with command: sudo cp ./gpspoller /etc/init.d/
+2. Make the file gpspoller executable with command: sudo chmod +x /etc/init.d/gpspoller
+3. To make the script run at startup use the following command: sudo update-rc.d /etc/init.d/gpspoller defaults
+4. Create the folder /usr/local/bin/gpspoller/ with command: sudo mkdir /usr/local/bin/gpspoller/
+5. Copy the file GPSPoller.py to /usr/local/bin/gpspoller/ with command: sudo cp ./GPSPoller.py /usr/local/bin/gpspoller/
+6. Make the file GPSPoller.py executable with command: sudo chmod +x /usr/local/bin/GPSPoller.py
+7. Restart the Raspberry Pi
+
+
+2014-05-01
+Jani Pasanen

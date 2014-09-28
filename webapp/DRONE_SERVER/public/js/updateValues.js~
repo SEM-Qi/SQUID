@@ -1,0 +1,15 @@
+$(document).ready(function() {
+    updateValues();
+});
+
+function updateValues() {
+    $.getJSON("js/ip.json",function(data) {
+        if (data.speed === "" || data.altitude === "") { 
+        }else{
+            $("#speed").html(" " + data.speed);
+            $("#altitude").html(" " + data.altitude);
+        }
+        console.log(data.speed + " " + data.altitude);
+    });
+    setTimeout(updateValues, 1000);
+}

@@ -1,0 +1,14 @@
+[Dialer Defaults]
+#Init1 = ATZ
+#Init2 = ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+#Init3 = AT^NDISDUP=1,1, "4g.comviq.se"
+
+#Init3 = AT+CGDCONT=1, "IP","4g.comviq.se"
+Stupid Mode = 1
+Modem Type = Analog Modem
+ISDN = 0
+Phone = *99#
+Modem = /dev/ttyUSB1
+Username = "blank" 
+Password = "blank"
+Baud = 460800

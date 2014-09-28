@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ground Control</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/videostream/script.js"></script>
+        <script src="js/gamepad.js"></script>
+        <script src="js/lib/jquery.js"></script>
+        <script src="js/dropdown.js"></script> 
+    </head>
+    <body onload="setTimeout('init();', 100);">
+        
+        <!--_______________________________MENUBAR___________________________-->
+       
+        <div class="menubar">
+            <div id="logo" class="logo">
+                <img class="icon" src="img/appbar.companioncube.png" alt="">
+            </div>
+            <div class="info-panel">
+                <div class="info-element">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p class="resize-font">NaN m</p>
+                </div>
+                <div class="info-element">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p class="resize-font">NaN km/h</p>
+                </div>
+            </div>
+            <div class="notification-panel">
+                <div class="notification-element">
+                    <img id="notification-icon" src="img/appbar.alert.white.svg"
+                        alt="">
+                    <p id="notification-text" class="resize-font">
+                        please connect your gamepad</p>
+                </div>
+            </div>
+            <div id="menu-panel" class="menu-panel">
+                <a id="settings-icon" class="icon" href="javascript:void(0)">
+                    <img class="icon-image" src="img/appbar.cog.white.svg"
+                        alt="">
+                </a>
+                <a id="battery-icon" class="icon" href="javascript:void(0)">
+                    <img class="icon-image" src="img/appbar.battery.2.white.svg" alt="">
+                </a>
+                <a id="connection-icon" class="icon" href="javascript:void(0)">
+                    <img class="icon-image" src="img/appbar.connection.quality.veryhigh.white.svg" alt="">
+                </a>
+                <a id="sound-icon" class="icon" href="javascript:void(0)">
+                    <img class="icon-image" src="img/appbar.sound.2.white.svg" alt="">
+                </a>
+                <img id="gamepad-icon" class="icon invisible" src="img/appbar.controller.xbox.white.svg" alt="">
+            </div>
+            
+            <!--______________________________DROPDOWN_______________________-->
+            
+            <div id="dropdown-menu" class="dropdown-menu invisible">
+                <div class="dropdown-element battery-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>battery info 01</p>
+                </div>
+                <div id="battery-option" class="dropdown-element battery-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>battery info 02</p>
+                </div>
+                <div class="dropdown-element connection-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>connection info 01</p>
+                </div>
+                <div class="dropdown-element sound-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>sound option 01</p>
+                </div>
+                <div class="dropdown-element sound-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>sound option 02</p>
+                </div>
+                <div class="dropdown-element setting-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>setting option 01</p>
+                </div>
+                <div class="dropdown-element setting-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>setting option 02</p>
+                </div>
+                <div class="dropdown-element controller-option invisible">
+                    <img src="img/appbar.cog.white.svg" alt="">
+                    <p>gamepad option 01</p>
+                </div>
+            </div>
+        </div>
+        
+        <!--______________________________CONTENT____________________________-->
+        
+        <div id="map-panel" class="map-panel">
+            <div id="map-canvas" class="map"></div>
+            <div class="map-icon-panel">
+                <img class="map-icon icon" src="img/appbar.camera.white.svg" alt="">
+                <img id="camera-icon" class="map-icon icon" src="img/m.camera_3.svg" alt="">
+                <img id="resize-icon" class="map-icon icon" src="img/appbar.arrow.expand.white.svg" alt="">
+            </div>
+        </div>
+        
+        <div id="content" class="content">
+            <img id="mjpeg_dest" class="video-stream">
+            <div class="copyright-info">
+                <p class="copyright-text">© Copyright group QI</p>
+            </div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="js/map.js"></script>
+        
+        <!--_______________________________GAMEPAD___________________________-->
+        
+        <div id="gamepad" class="gamepad invisible">
+            <div class="gamepad-container">
+                <div id="axis1" class="axis-top"></div>
+                <div class="basis"></div>
+            </div>
+            <div class="gamepad-container">
+                <div id="axis2" class="axis-top"></div>
+                <div class="basis"></div>
+            </div>
+            <div class="gamepad-container">
+                <div id="Y" class="button Y"><p>Y</p></div>
+                <div id="B" class="button B"><p>B</p></div>
+                <div id="X" class="button X"><p>X</p></div>
+                <div id="A" class="button A"><p>A</p></div>
+            </div>
+        </div>
+    </body>
+</html>

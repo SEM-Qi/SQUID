@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>drone view</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" 
+              href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet"
+              href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>       
+        <script type="text/javascript" src="js/videostream/script.js"></script>
+        <script type="text/javascript" src="js/gamepad_map.js"></script>  
+        <script type="text/javascript" src="js/gamepad_visuals.js"></script>        
+        <script type="text/javascript" src="js/gamepad.js"></script>
+        <script type="text/javascript" src="js/playSound.js"></script>
+        <script type="text/javascript" src="js/updateValues.js"></script>
+    </head>
+    <body onload="setTimeout('init();', 100);">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="logo" class="navbar-brand">GROUND CONTROL</a>
+                </div>
+                <div class="container-fluid">
+
+                </div>
+
+                <div class="navbar-collapse collapse" style="height: 1px;">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <p class="navbar-text"><i class="glyphicon glyphicon-arrow-up"></i>
+                                ALTITUDE:<span id="altitude"></span></p>
+                        </li>
+                        <li>
+                            <p class="navbar-text"><i class="glyphicon glyphicon-dashboard"></i>
+                                SPEED:<span id="speed"></span></p>
+                        </li>
+                        <li>
+                            <p class="navbar-text"><i class="glyphicon glyphicon-resize-horizontal"></i>
+                                FLIGHT DISTANCE:<span id="total-distance"></span></p>
+                        </li>
+                        <li>
+                            <p class="navbar-text"><i class="glyphicon glyphicon-resize-horizontal"></i>
+                                NEXT WAYPOINT:<span id="next-distance"></span></p>
+                        </li>
+                    </ul>
+                    <ul class ="nav navbar-nav navbar-right">
+                        <li>
+                            <a><i class="glyphicon glyphicon-signal"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-music"></i>
+                                <b class="caret"></b>
+                            </a>  
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Available sounds</li>
+                                <li id="A-team-song"><a href="#">A-team song</a></li>
+                                <li><a href="#">sound 02</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-cog"></i>
+                                <b class="caret"></b>
+                            </a>  
+                            <ul class="dropdown-menu">
+                                <li><a href="#">option 01</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://qi.homeip.net:8585" id="exit"
+                               data-toggle="tooltip" data-placement="bottom"
+                               title="Log Out"
+                               ><i class="glyphicon glyphicon-log-out"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>         
+        <div class="progress underNav">
+            <div id="progress-bar" class="progress-bar progress-bar-info" 
+                role="progressbar" aria-valuenow="60" aria-valuemin="0" 
+                aria-valuemax="100" style="width: 0%">
+                <span class="sr-only">60% Complete (info)</span>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="info-panel" class="alert alert-warning text-center">
+
+                <h4>
+                    <i class="glyphicon glyphicon-exclamation-sign"></i>
+                    <span id="notification-text">
+                        please connect your gamepad and press any button
+                    </span>
+                </h4>
+
+            </div>
+
+            <div id="map-container" class="container-fluid map-container">
+                <div id="map-canvas" class="map"></div>
+                <div id="map-navbar" class="navbar navbar-inverse map-nav">
+                    <ul class ="nav navbar-nav nav-left large-font">
+                        <li>
+                            <a id="shortpath-button" class="pointer"
+                               data-toggle="tooltip" data-placement="bottom"
+                               title="Find Shortest Path"
+                               ><i class="glyphicon glyphicon-play-circle"></i></a>
+                        </li>
+                        <li>
+                            <a id= "wayremove-button" class="pointer" 
+                               data-toggle="tooltip" data-placement="bottom"
+                               title="Remove All Waypoints"
+                               ><i class="glyphicon glyphicon-remove-circle"></i></a>
+                        </li>
+                        <li>
+                            <a id="resize-button" class="pointer"
+                               data-toggle="tooltip" data-placement="bottom"
+                               title="Toggle Size"
+                               ><i id="resize-icon" class="glyphicon glyphicon-resize-full"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content">
+            <img id="mjpeg_dest" class="video-stream">
+            <div class="centered container">
+                <h1 class="txt-centered placeholder text-muted">no video feed</h1>
+            </div>
+            <footer>
+                <!--___________________GAMEPAD___________________________-->
+
+                <div id="gamepad" class="container fade">
+                    <div class="gmp-center container">
+                        <div class="gamepad-container">
+                            <div id="axis1" class="axis-top"></div>
+                            <div class="basis"></div>
+                        </div>
+                        <div class="gamepad-container">
+                            <div id="Y" class="button Y"><p>Y</p></div>
+                            <div id="B" class="button B"><p>B</p></div>
+                            <div id="X" class="button X"><p>X</p></div>
+                            <div id="A" class="button A"><p>A</p></div>
+                        </div>
+                        <div class="gamepad-container">
+                            <div id="axis2" class="axis-top"></div>
+                            <div class="basis"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <p class="text-muted">© GROUP QI 2014</p>
+                    <hr>
+                </div>
+            </footer>
+        </div>
+
+
+        <script type="text/javascript"
+        src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+    </body>
+</html>

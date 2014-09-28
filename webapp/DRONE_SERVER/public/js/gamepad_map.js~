@@ -1,0 +1,28 @@
+/* stores the global values for the gamepad                            *
+ * axis differ depending on OS: these values work on Windows and Linux */
+
+var axis = {
+    "verticalLEFT": 1,
+    "horizontalLEFT": 0,
+    "verticalRIGHT": 3,
+    "horizontalRIGHT": 4
+};
+
+var button = {
+    "A": {
+        "id": 0,
+        "value": 0
+    },
+    "B": {
+        "id": 1,
+        "value": 0
+    },
+    "X": {
+        "id": 2,
+        "value": 0
+    },
+    "Y": {
+        "id": 3,
+        "value": 0
+    }
+};

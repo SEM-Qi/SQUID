@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+#Install pygame on rpi with : sudo apt-get install python-pygame
+#It is said that mp3 support is limited, .wav,.ogg file can be used instead
+
+import pygame
+import sys
+
+def playSong(song, time):
+  pygame.mixer.init()
+  pygame.mixer.music.load (song)
+  for x in range (0, time):
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy == True:
+      continue
+      
+if __name__ == '__main__':
+#  play (sys.argv[1:], sys.argv[2:])
+	play ("TheATeam.mp3", 1)

@@ -1,0 +1,18 @@
+Installation instructions for the GPS Poller for Raspberry Pi.
+
+1. Copy the file ipaddresspoller to /etc/init.d/ with command: sudo cp ./ipaddresspoller /etc/init.d/
+2. Make the file ipaddresspoller executable with command: sudo chmod +x /etc/init.d/ipaddresspoller
+3. To make the script run at startup use the following command: sudo update-rc.d ipaddresspoller defaults
+3. Create the folder /usr/local/bin/ipaddresspoller/ with command: sudo mkdir /usr/local/bin/ipaddresspoller/
+4. Copy the file ipaddresspoller.py to /usr/local/bin/ipaddresspoller/ with command: sudo cp ./ipaddresspoller.py /usr/local/bin/ipaddrespoller/
+5. Copy the file ipaddresspoller.sh to /usr/local/bin/ipaddresspoller/ with command: sudo cp ./ipaddresspoller.sh /usr/local/bin/ipaddrespoller/
+6. Make the file ipaddresspoller.py executable with command: chmod +x /usr/local/bin/ipaddrespoller/ipaddresspoller.py
+7. Make the file ipaddresspoller.sh executable with command: chmod +x /usr/local/bin/ipaddrespoller/ipaddresspoller.sh
+
+8. ssh-keygen: Generate certificates using command 
+9. ssh-copy-id user@servername: and then transfer the contents of /home/user/.ssh/id_rsa.pub to /home/user/.ssh/authorized_keys on the remote device by running this command
+10. Login to the remote device using ssh user@servername. At this point you should login without having to specify password.
+11. In order for the remote login to work run the ipaddresspoller.py file manually first time and type in the password of the remote site. Once this is done it should not ask for it in the future.
+
+2014-05-08
+Jani Pasanen

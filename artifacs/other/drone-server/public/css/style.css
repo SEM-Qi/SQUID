@@ -1,0 +1,213 @@
+
+.pointer {
+    cursor: pointer;
+}
+
+.navbar-header {
+    background: #080808;
+    color: #fff;
+}
+
+#logo {
+    color: #fff;
+}
+
+.large-font {
+    font-size: 1.4em;
+    margin-left: 50px;
+}
+
+.invisible {
+    display: none;
+}
+
+.content {
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-stream {
+    width:100%; 
+    height:100%;
+}
+
+
+#exit {
+    background: #ac2925;
+    cursor: pointer;
+    color: #fff;
+}
+
+#exit:hover {
+    background: #d2322d;
+}
+
+#enter {
+    background: #4cae4c;
+}
+
+#enter:hover {
+    background: #4cae4c;
+}
+
+footer{
+    position: absolute;
+    z-index: 5;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.txt-centered {
+    text-align:center;
+    margin-top: 20px;
+}
+
+.centered {
+    margin-top: 40px;
+    max-width: 800px;
+}
+
+.nav-centered {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
+}
+
+.placeholder {
+    margin-top: 200px;
+}
+
+/*-----------------------------------------------------------------MAP--------*/
+
+.map {
+    background: #080808;
+    height: 250px; width: 250px;
+    margin-top: 63px;
+}
+
+.map-nav {
+    width:250px;
+}
+
+.map-container {
+    margin-left: 20px; margin-right: 20px;
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        display: none;
+    }
+}
+
+#info-panel{
+    position: absolute;
+    width: 100%;
+}
+
+.underNav {
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+/*-------------------------------------------------------------GAMEPAD--------*/
+.gamepad-container {
+    height: 200px; width: 200px; 
+    border: 4px dashed #333;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    z-index: 512;
+}
+
+.gmp-center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    margin-top: -250px;
+}
+
+.button {
+    border-radius: 50%;
+    width: 50px; height: 50px;
+    text-align: center;
+    font-size: 2.4em;
+    background: #fff;
+}
+
+.Y {
+    margin-top: 19px;
+    margin-left: 73px;
+    border: 3px solid #c8960f;
+    color: #c8960f;
+}
+
+.B {
+    margin-left: 127px;
+    border: 3px solid #782814;
+    color: #782814;
+}
+
+.X {
+    margin-top: -54px;
+    margin-left: 19px;
+    border: 3px solid #283c64;
+    color: #283c64;
+}
+
+.A {
+    margin-left: 73px;
+    border: 3px solid #646428;
+    color: #646428;
+}
+
+.pressedA {
+    color: #c0c08a;
+    background: #96963c;
+}
+
+.pressedX {
+    color: #96aed8;
+    background: #5078be;
+}
+
+.pressedB {
+    color: #d28d78;
+    background: #b4411e;
+}
+
+.pressedY {
+    color: #f6d875;
+    background: #f0be19;
+}
+
+.axis-top {
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    text-align: center;
+    font-size: 2.1em;
+    background: #333;
+    border: 8px solid #080808;
+    position: absolute;
+    z-index: 2;
+}
+
+.basis {
+    border-radius: 50%;
+    width: 120px; height: 120px;
+    text-align: center;
+    font-size: 2.1em;
+    background: #999;
+    margin-top: 36px;
+    margin-left: 36px;
+    border: 4px solid #eee;
+    position: absolute;
+}
