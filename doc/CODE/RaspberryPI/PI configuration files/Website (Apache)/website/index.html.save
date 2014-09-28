@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ground Control - Quadview</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/st.css">
+        <script src="js/videostream/script.js"></script>
+    </head>
+    <body onload="setTimeout('init();', 100);">
+        <div class="menubar">
+            <div class="logo">
+                <img src="img/appbar.companioncube.png">
+            </div>
+            <div class="info-panel">
+                <div class="info-element">
+                    <img src="img/appbar.axis.three.png">
+                    <p class="resize-font">x.x m</p>
+                </div>
+                <div class="info-element">
+                    <img src="img/appbar.axis.three.png">
+                    <p class="resize-font">x.x km/h</p>
+                </div>
+            </div>
+            <div class="notification-panel">
+                <div class="notification-element">
+                    <img src="img/appbar.alert.white.svg" alt="">
+                    <p class="resize-font">notification 01</p>
+                </div>
+            </div>
+            <div class="menu-panel">
+<!--                <a class="icon resize-font">log out</a>-->
+                <img id="settings" class="icon" src="img/appbar.cog.white.svg">
+                <img id="battery" class="icon" src="img/appbar.battery.2.white.svg">
+                <img id="network" class="icon" src="img/appbar.connection.quality.veryhigh.white.svg">
+                <img id="connected" class="icon invisible" src="img/appbar.connect.white.svg">
+                <img id="controller" class="icon invisible" src="img/appbar.controller.xbox.white.svg">
+            </div>
+        </div>
+        <div class="button-panel">
+            <div id="map-canvas" class="map"></div>
+            <div class="photon-icons">
+                <img class="icon" src="img/appbar.camera.white.svg">
+                <img class="icon" src="img/appbar.sound.2.white.svg">
+                <img class="icon" src="img/appbar.map.location.white.svg">
+            </div>
+        </div>
+        <div class="content">
+            <img style="width:100%; height:100%;" id="mjpeg_dest">
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="js/initializeMap.js"></script>
+    </body>
+</html>

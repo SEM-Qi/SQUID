@@ -1,0 +1,33 @@
+OPTIONS FOR THE RASPBERRY PI POWER SUPPLY | Aure 2013.05.11
+
+1. Battery bank (4xAA Batteries) , 2 hours of use
+
+	ADVANTAGES
+	- extra battery power
+	- easy to implement
+	- already on its way (20.march)
+	
+	DISADVANTAGES
+	- weight
+	- might not be compatible with checking the power of the quad
+
+2. Power over the BEC, x
+
+	ADVANTAGES
+	- less weight
+
+	DISAVANTAGES
+	- need to cut open a Micro USB cable and solder it with the BEC
+	
+3. Power directly from the lipo
+
+------------------------------------------------------------------------------
+
+	Since we are at the moment not aiming for a maximal flight time, extra weight is not
+	a big concern.
+	
+	For reasons that are obvious we will use the Battery Bank for now.
+
+
+
+	

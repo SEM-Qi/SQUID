@@ -1,0 +1,205 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 16, 2014, 5:58:03 PM
+    Author     : aure
+*/
+
+/*-----------------------------------------------------------------RESET STYLE*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*--------------------------------------------------------------GENERAL STYLES*/
+
+body {
+    min-width: 800px;
+    color: #ddd;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+/*-------------------------------------------------------------------ON RESIZE*/
+
+@media all and (max-width: 900px) {
+    .resize-font {
+        font-size: 0.8em; 
+    }
+}
+
+/*---------------------------------------------------------------------MENUBAR*/
+
+.menubar {
+    background: black;
+    height: 40px;
+    overflow:hidden;
+}
+
+.menubar img {
+    height:40px;
+}
+
+.menubar p, a {
+    padding-top: 12px;
+}
+
+.logo {
+    height: 40px;
+    width: 5%;
+    float: left;
+}
+
+.info-panel {
+    height: 100%;
+    width: 26%;
+    float: left;
+}
+
+.info-element {
+    margin-right: 10px;
+}
+
+.info-element img {
+    float: left;
+}
+
+.info-element p {
+    float: left;
+}
+
+.notification-panel {
+    height: 100%;
+    min-width: 35%;
+    float: left;
+}
+
+.notification-element {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.notification-panel img {
+    float: left;
+}
+
+.notification-panel p {
+    float: left;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.menu-panel {
+    height: 100%;
+    min-width: 34%;
+    float: right;
+}
+
+.menu-panel img {
+    float: right; 
+}
+
+.menu-panel a {
+    float: right;
+    height: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.icon:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+.invisible {
+    display: none;
+}
+
+/*---------------------------------------------------------------------CONTENT*/
+
+.content {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    background-color: green;
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content img {
+    width:100%; 
+    height:100%;
+}
+.button-panel {
+    background: black;
+    height: 330px; width: 250px;
+    margin: 20px;
+}
+
+.button-panel img {
+    height: 80px;
+}
+
+.map {
+    background: chocolate;
+    height: 250px; width: 250px;
+}
+

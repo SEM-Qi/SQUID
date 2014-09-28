@@ -1,0 +1,33 @@
+Download/Copy a project from GitHub
+===================================
+
+example: git clone git://github.com/schacon/grit.git // Clones the project and creates a folder called grit.git
+example2: git clone git://github.com/schacon/grit.git GIT // Clone the project and copy to the folder GIT
+example3: git clone https://github.com/schacon/grit.git
+example4 SSH: git clone https:user@server:/path.git
+
+
+To check if there is any new data since last commit and push:
+=============================================================
+
+git status (execute inside the local repository folder)
+
+
+
+To add new data that has been added:
+=====================================
+
+git add <file>
+
+
+To commit:
+==========
+
+
+git commit -m 'REPLACE THIS WITH YOUR COMMIT TEXT'
+
+
+To push to remote site:
+========================
+
+git push origin master

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- this is going to be a description -->
+<html>
+	<head>
+		<title>Quad Control | Flight view</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/gamepadtest.js"></script>
+		<script src="js/lib/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/testingJQuery.js"></script>
+	</head>
+	<body>
+			<!-- MENU BAR -->
+		<div id="top-menubar">
+			<p class="info resize-font">speed: NaN</p>
+			<p class="info resize-font">altitude: NaN</p>
+			<div id="notification">
+				<img id="notification-icon" class="notification-icon" src="img/appbar.alert.white.svg">
+				<p id="notification-text" class="notification-text resize-font">please connect a gamepad</p>
+			</div>
+			<button class="menubar-button resize-font">log out</button>
+			<button class="menubar-button resize-font">settings</button>
+			
+			<!-- DROPDOWN MENUS -->
+			<div class="dd wrapper-dropdown-3" tabindex="1">
+				<img class="info-icon" src="img/appbar.battery.2.white.svg">
+				<ul class="dropdown">
+					<li><a href="#"><img src="img/appbar.alert.svg">battery life</a></li>
+				</ul>
+			</div>
+			<div class="dd wrapper-dropdown-3" tabindex="1">		
+				<img class="info-icon" src="img/appbar.connection.quality.veryhigh.white.svg">
+				<ul class="dropdown">
+					<li><a href="#"><img src="img/appbar.connection.bluetooth.svg">some option</a></li>
+					<li><a href="#"><img src="img/appbar.connection.3g.svg">other option</a></li>
+				</ul>
+			</div>
+			<div class="dd wrapper-dropdown-3" tabindex="1">
+				<img class="info-icon" src="img/appbar.sound.2.white.svg">
+				<ul class="dropdown">
+					<li><a href="#"><img src="img/appbar.alert.svg">moar option</a></li>
+					<li><a href="#"><img src="img/appbar.alert.svg">some moar options</a></li>
+				</ul>
+			</div>
+			<img id="info-controller" class="info-icon" src="img/appbar.controller.xbox.white.svg">
+		</div>
+		
+			<!-- THE VIDEO STREAM, MAP, GAMEPAD CONTROLS -->
+		<div id="content">
+			<img id="map" src="img/map_icon.jpg" alt="map not available">
+			<object id="embedded" data="http://qiraspberrypi.homeip.net">
+			<embed src="http://qiraspberrypi.homeip.net">
+			</object>
+			<div id="video">
+				<img class="video-button" src="img/appbar.camera.white.svg">	
+			</div>	
+		</div>
+	</body>
+</html>

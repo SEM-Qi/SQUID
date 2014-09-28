@@ -1,0 +1,21 @@
+When running the quad from my SD card there are 4 files and a couple of commands that are important. The first, server.js, (~/server) is the node server that loads the webpage. It's an old version and does not stream video or load the map but handles the controls as per the current version. It loads on startup but you will need to stop it and adjust the gamepad.js (~/server/squid/SQUID/Tesbedforserver/public_html/js) file to point to the IP of the raspberry pi. To stop the server type 'nodestop' from anywhere, to start it again, type 'nodestart'.
+
+The socket server, wsserver.js (~/server/squid/SQUID/Tesbedforserver) should be started next with 'node wsserver.js' in the appropriate folder. This takes the messages from gamepad.js echos them back and relays the most recent to the MAVProxy module via UDP packet when it receives a UDP packet. When it is running you can start firefox, go to the IP address of the pi, plug in the controller and see it displayed on the webpage.
+
+The controls are: 
+throttle- left vertical
+Roll- left horizontal
+Pitch - right vertical
+Yaw- right horizontal
+
+The next step is to make sure the pi is connected to the Ardupilot by mini USB, plug in the battery and then type 'mavproxy.py' into the commandline to start it. Once MAVProxy is loaded, type 'rc 3 1100' to set the throttle channel, type 'arm throttle' and wait for it to arm. If this doesn't work, then start the process again (it should so long as the quad is on flat ground) once armed, hold the throttle to near the lowest point, type 'module load testmod' and it should begin printing out the RC values of the controller. You should now be able to control the quad!!
+
+
+To set up another pi to fly the quad, assuming you have some type of server handling the website already, you need to make sure your gamepad.js file is sending its messages to your pi's IP.
+
+On Dropbox, in the main project quadcopter folder, there are two files, wsserver.js and mavproxy_testmod.py. The first can go anywhere but to run it you need to make sure you have installed node 'sudo apt-get install node', and make sure you have npm (otherwise  'sudo apt-get install npm') and websockets ('sudo npm install websockets -g').
+
+For mavproxy_testmod.py install MAVProxy (instructions on the MAVProxy website: tridge.github.io/MAVProxy) you need to put it in the MAVProxy modules folder (for me that is /usr/local/lib/python2.7/dist-packages/MAVProxy/modules)
+Be careful when copying these into the pi, sometimes the indentation gets screwed up, double check if you get an error.
+
+Then you should be able to run as above.
